@@ -1,0 +1,12 @@
+<table>
+	<tr><td><h1>New Zombie form</h1></td></tr>
+
+	<%= form_for @zombie, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+		<tr>
+			<td>Name <input type="text" name="name"></input></td>		
+		</tr>
+		<tr><td>Home <input type="text" name="home"></input></td></tr>
+		<tr><td align=center><input type="submit" value="Create new Zombie"></td></tr>
+  <%end%>
+
+</table>
