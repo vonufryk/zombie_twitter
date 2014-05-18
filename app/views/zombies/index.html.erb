@@ -1,15 +1,15 @@
 <table>
   <tr><td><h1>Listing all Zombies</h1></td></tr>
-	<tr>	  
-		<td class="bold">Name</td>
-		<td class="bold">Home</td>
+  <tr>	  
+	<td class="bold">Name</td>
+	<td class="bold">Home</td>
   </tr>  
     <% Zombie.all.each do |zombie| %>
     <tr>
-    	<td><%= link_to zombie.name, zombie %></td>
+      <td><%= link_to zombie.name, zombie %></td>
     	<td><%= zombie.home %></td>
-    	<td><%= button_to "Delete", zombie, :method=>:delete %></td>    	
+    	<td><%= button_to "Delete", zombie, method: :delete, controller: :zombies, action: :destroy, :confirm => "Are you sure?" %></td>    	
     </tr>    
     <% end %>    
-    <tr><td><%= button_to "Create new", new_zombie_path, :method=>:get %></td></tr>
+    <tr><td><%= button_to "Create new", new_zombie_path, :method=>:get, :class => 'btn btn-success' %></td></tr>    
 </table>

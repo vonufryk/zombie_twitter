@@ -15,22 +15,23 @@ class ZombiesController < ApplicationController
   def create
     @zombie = Zombie.create(name: params[:name], home: params[:home])
     if @zombie.save
-      redirect_to @zombie
+      redirect_to :action =>'index'
     else
       render new
     end
   end
   
-  def destroy
-    @zombie = Zombie.find(params[:id])
-    @zombie.destroy
+  def destroy    
+    Zombie.find(params[:id]).destroy
+    redirect_to :action => 'index'
+    #Zombie.find(params[:id]).destroy
     #if @zombie
     #  @zombie.destroy
     #  redirect_to 'zombies'
     #else      
     #  redirect_to 'new'
     #end
-    redirect_to 'index'
+    #redirect_to 'index'
   end
   
 end
