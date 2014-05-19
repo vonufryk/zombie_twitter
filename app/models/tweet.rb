@@ -1,6 +1,6 @@
 class Tweet < ActiveRecord::Base
   
-  validates_presence_of :status
+  validates :status, :text, presence: true
   
   #belongs_to :zombie
 

@@ -4,9 +4,7 @@
 <% tweets.each do |tweet| %>  
   <h2><%= tweet.status %></h2>
   <p><%= tweet.text %></p>
-  =begin
-  <p> Posted by < tweet.zombie.name %> </p>
-  =end
+  <p> Posted by < link_to zombie, tweet.zombie.name %> </p>
 <% end %>
 
 <% if tweets.size == 0 %>

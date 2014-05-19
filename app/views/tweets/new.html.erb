@@ -8,27 +8,32 @@
     </tr>
   </thead>
 
+
+
   <tbody>
     <tr>
       <td>
         <%= form_for @tweet, url: {action: "create"} do |f| %>
           <p/>    
+          <%= @tweet.errors.full_messages_for(:status).first if @tweet.errors[:status].any? %>
           <%= f.label 'status' %>
           <%= f.text_field :status %>
           <br/>
           
           </p/>
+          <%= @tweet.errors.full_messages_for(:text).first if @tweet.errors[:text].any? %>
           <%= f.label 'text' %>
           <%= f.text_field :text %>
           <br/>
-          </p>
+          <p/>
           <p>
             <%= f.submit 'Save tweet', class: :'btn btn-success'%>
           </p>
           
         <% end %>
       </td>
-    </tr>
+    </tr>       
+    
   </tbody>
 </table>
 

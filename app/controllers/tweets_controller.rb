@@ -16,7 +16,7 @@ class TweetsController < ApplicationController
     if @tweet.save
       redirect_to :action =>'index'
     else
-      redirect_to :action => 'new'
+      render :action => 'new'
     end
   end
   
