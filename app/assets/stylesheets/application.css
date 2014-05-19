@@ -15,24 +15,14 @@
  *= require bootstrap.min
  */
 
-table
-{
-  border: 1px solid black;
-}
-
-table
-{ 
-  margin-left: auto;
-  margin-right: auto;
-}
-
-td
-{
-  text-align:center;
-}
-.bold
-{
-  font-weight: bold;
+/* Override Bootstrap 3 font locations */
+@font-face {
+font-family: 'Glyphicons Halflings';
+src: url('../assets/glyphicons-halflings-regular.eot');
+src: url('../assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+url('../assets/glyphicons-halflings-regular.woff') format('woff'),
+url('../assets/glyphicons-halflings-regular.ttf') format('truetype'),
+url('../assets/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
 }
 
 

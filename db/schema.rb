@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20140516121419) do
 
   create_table "tweets", force: true do |t|
     t.integer "zombie_id"
-    t.string  "name"
-    t.string  "home"
+    t.string  "status"
+    t.string  "text"
   end
 
   create_table "zombies", force: true do |t|

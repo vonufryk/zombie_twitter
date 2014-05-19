@@ -1,4 +1,8 @@
 Rails.application.routes.draw do  
+  #get 'tweets/show'
+
+  #get 'tweets/new'
+
   resources :tweets
   resources :zombies
   root :to => 'zombies', :action => :index

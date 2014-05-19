@@ -1,7 +1,16 @@
-<% tweets = Tweet.find(:all) %>
-<% tweets.each do |tweet|} %>
+<h1>Tweets</h1>
 
-<h1><%= tweet.status %></h1>
-<p> Posted by <% tweet.zombie.name %> </p>
-
+<% tweets = Tweet.all %>
+<% tweets.each do |tweet| %>  
+  <h2><%= tweet.status %></h2>
+  <p><%= tweet.text %></p>
+  =begin
+  <p> Posted by < tweet.zombie.name %> </p>
+  =end
 <% end %>
+
+<% if tweets.size == 0 %>
+  <p>There are no tweets yet.</p>
+<% end %>
+
+<%= button_to "Create new", new_tweet_path, :method=>:get, :class => 'btn btn-success'%>

@@ -1,7 +1,7 @@
 <table>
 	<tr><td><h1>New Zombie form</h1></td></tr>
 
-	<%= form_for @zombie, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+	<%= form_for @zombie, url: {action: "create"} do |f| %>
 		<tr>
 			<td>Name <input type="text" name="name"></input></td>		
 		</tr>

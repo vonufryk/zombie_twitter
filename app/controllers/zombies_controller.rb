@@ -15,9 +15,9 @@ class ZombiesController < ApplicationController
   def create
     @zombie = Zombie.create(name: params[:name], home: params[:home])
     if @zombie.save
-      redirect_to :action =>'index'
+      redirect_to :action => 'index'
     else
-      render new
+      redirect_to :action => 'new'
     end
   end
   
