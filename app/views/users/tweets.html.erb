@@ -1,0 +1,8 @@
+<h2>All tweets for user <%= @user.email %> </h2>
+
+<% Tweet.where(:user_id => @user.id).each do |tweet| %>
+    Tweet</br>
+    Status: <%= tweet.status %></br>
+    Text: <%= tweet.text %></br>
+    </br
+<% end %>

@@ -1,10 +1,12 @@
-<h1>Tweets</h1>
+<div align=center>
+<h2>Tweets</h2>
+</div>
 
 <% tweets = Tweet.all %>
 <% tweets.each do |tweet| %>  
   <h2><%= tweet.status %></h2>
   <p><%= tweet.text %></p>
-  <p> Posted by < link_to zombie, tweet.zombie.name %> </p>
+  <p> Posted by <%= link_to User.find(tweet.user_id).email, controller: :users, action: :tweets, :id => tweet.user_id%> </p>
 <% end %>
 
 <% if tweets.size == 0 %>
