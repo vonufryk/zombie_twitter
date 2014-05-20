@@ -6,7 +6,9 @@ Rails.application.routes.draw do
   get 'users/tweets'
   resources :tweets
   resources :zombies
-  root to: 'tweets#index'
+  get 'welcome/index'
+  #root to: 'tweets#index'
+  root to: 'welcome#index'
   #form_for(@zombies)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
