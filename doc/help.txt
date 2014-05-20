@@ -1,0 +1,18 @@
+###
+
+When running `rake db:create` (or migrating from sqlite3 to postgresql) you probably will get the error "FATAL:  role "User" does not exist ".
+To fix this, read it:
+http://stackoverflow.com/questions/8639424/role-does-not-exist-and-unable-to-create-database-when-using-postgresql
+```
+Add a username to your database.yml, might as well use your application's name (or some variant of the name) as the username. I'' use app_name as a placeholder: config/database.yml => username: app_name
+
+$ sudo -u postgres psql
+postgres=# create role app_name login createdb;
+postgres=# \q
+run `rake db:create`
+```
+
+###
+
+How to use with heroku help:
+https://devcenter.heroku.com/articles/getting-started-with-rails4
