@@ -1,11 +1,12 @@
 Rails.application.routes.draw do  
+  devise_for :users
   #get 'tweets/show'
 
   #get 'tweets/new'
 
   resources :tweets
   resources :zombies
-  root :to => 'zombies', :action => :index
+  root to: 'zombies#index'
   #form_for(@zombies)
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
